@@ -1,2 +1,3 @@
 # Hello-world
-Try to new thing
+Try to new thinh
+my first repository in the github
