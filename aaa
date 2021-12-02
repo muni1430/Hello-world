@@ -1,5 +1,5 @@
 node {
 stage('test'){
-println('output is done')
+println('output is done in github')
 }
 }
