@@ -19,5 +19,6 @@ node ('main'){
     println("Hello BOOLEAN!! $Boolean")
     println("Hello MULTI-LINE-STRING!! ${Multiline_String}")
     println('Hello STRING-PARAMETER!! ' + STRING_PARAMETER)
+    ]
   }
 }
