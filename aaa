@@ -14,15 +14,10 @@ node ('main'){
         defaultValue:''' defaultvalue for multiline ''',
         name:'Multiline_String'
         ),
-        stage('stage1'){
-        println("multi numbers"+CHOUCE_NUMBERS)
-        println("multi string  ${Multiline_String}") 
-    
-    }
-   ]
-   
-   
-   }
-    
-    
-
+     stage('Stage 2'){
+    println('Hello CHOCIE-Param!! ' + CHOUCE_NUMBERS)
+    println("Hello BOOLEAN!! $Boolean")
+    println("Hello MULTI-LINE-STRING!! ${Multiline_String}")
+    println('Hello STRING-PARAMETER!! ' + STRING_PARAMETER)
+  }
+}
