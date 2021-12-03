@@ -16,7 +16,7 @@ node ('main'){
         ),
         stage('stage1'){
         println("multi numbers"+CHOUCE_NUMBERS)
-        println("boolean value!$ Boolean")
+        println("boolean value!!$ Boolean")
         println("multi string  ${Multiline_String}") 
     ]
     }
