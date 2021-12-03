@@ -19,5 +19,6 @@ node ('main'){
         println("multi string  ${Multiline_String}") 
     
     }
+    ]
     
 
