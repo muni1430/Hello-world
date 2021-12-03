@@ -1,5 +1,23 @@
-node {
-stage('test'){
-println('output is done in github')
-}
+node ('main'){
+  properties([
+    parameters([
+      choice(
+      choices:['one','two','three'],
+      name: 'CHOUCE_NUMBERS'
+      ),  
+      booleanParam(
+        defaultValue:true,
+        description::" ,
+        name:'Boolean'
+        ),
+        text(
+        defaultValue:''' defaultvalue for multiline ''',
+        name:'Multiline_String'
+        ),
+        stage('stage1'){
+        println("multi numbers"+CHOUCE_NUMBERS)
+        println("boolean value $ Boolean")
+        println("multi string  ${Multiline_String}") 
+    ]
+    }
 }
