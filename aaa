@@ -1,41 +1,24 @@
 node('main'){
-  properties([
-    parameters([
-      choice(
-        choices: ['ONE', 'TWO', 'THREE', 'FOUR', 'FIVE'], 
-        name: 'CHOCIE_Param'
-      ),
-      booleanParam(
-        defaultValue: true, 
-        description: '', 
-        name: 'BOOLEAN'
-      ),
-      text(
-        defaultValue: '''
-        default value for Multi Line
-        ''', 
-        name: 'MULTI_LINE_STRING'
-      ),
-      booleanParam(
-        defaultValue: true, 
-stage('Stage 1'){    
-    if(params.BOOLEAN == true){
-      println("As value is " + BOOLEAN)
-      timeout(unit: 'SECONDS', time: 60) {
-          def returnValue = input message: 'Need some input', parameters: [
-            string(defaultValue: '', description: '', name: 'Name'),
-            choice(choices: ['Siva' , 'Vignesh'], name: 'CHOCIE_Param')
-          ]
-          println(returnValue)
+  properties({
+    parameters({
+       choice (
+        choices :['one','two','three','four'],
+        name:'MULTIPLE_CHOICE'
+        ),
+        booleanParam(
+           defaultValue:true,
+              description:'This is true',
+                    name:'Boolean_param'
+                       ),
+         text(
+           defaultVlue:'default value for multiple string',
+               name:'multi_string'
+               ),
+      stage ('stage1'){
+      println("multiple numbers" + MULTIPLE_CHOICE)
+      println("boolean value is" + Boolean_param)
+      println("multi string is " + multi_string)
       }
-      
+      }
+      }
     }
-  } 
-')',
-stage('Stage 2'){
-    println('Hello CHOCIE-Param!! ' + CHOCIE_Param)
-    println("Hello BOOLEAN!! $BOOLEAN")
-    println("Hello MULTI-LINE-STRING!! ${MULTI_LINE_STRING}")
-    println('Hello STRING-PARAMETER!! ' + STRING_PARAMETER)
-  }
-}
