@@ -4,8 +4,8 @@ node('main'){
        choice (
         choices :['one','two','three','four'],
         name:'MULTIPLE_CHOICE'
-               ),
-               }
+               
+               
         booleanParam(
            defaultValue:true,
               description:'This is true',
@@ -22,4 +22,5 @@ node('main'){
       }
       }
       
+    }
     }
