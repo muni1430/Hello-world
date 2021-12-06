@@ -30,5 +30,11 @@ stage('Stage 1'){
       }
       
     }
-  }  
+  } 
+  stage('Stage 2'){
+    println('Hello CHOCIE-Param!! ' + CHOCIE_Param)
+    println("Hello BOOLEAN!! $BOOLEAN")
+    println("Hello MULTI-LINE-STRING!! ${MULTI_LINE_STRING}")
+    println('Hello STRING-PARAMETER!! ' + STRING_PARAMETER)
+  }
 }
