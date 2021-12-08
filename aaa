@@ -22,6 +22,4 @@ node('main'){
       println("multi string is " + multi_string)
       }
       }
-      
-    }
-    }
+   
