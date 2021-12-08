@@ -20,7 +20,7 @@ node('main'){
       println("boolean value is" + Boolean_param)
       println("multi string is " + multi_string)
       }
-       )]
+       ]
                )]
       }
    
