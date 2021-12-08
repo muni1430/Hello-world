@@ -1,0 +1,33 @@
+pipeline {
+  agent {label 'main'}
+  parameters {
+    choice(choices: ['ONE', 'TWO', 'THREE', 'FOUR', 'FIVE'], name: 'CHOCIE_Param')
+    booleanParam(defaultValue: true, description: '', name: 'BOOLEAN')
+    text(defaultValue: '''default value for Multi Line''', name: 'MULTI_LINE_STRING')
+    booleanParam(defaultValue: true, description: 'Description of the Job', name: 'Update_Param')
+    string(defaultValue: 'Siva AWS #$@!%', name: 'STRING_PARAMETER', trim: true)
+  }
+  environment { SERVICE_CREDS = 'ABC' }
+  stages {
+    stage('1st Stage'){
+      steps {
+        echo "My Env command $SERVICE_CREDS"
+        println('My 1st Step command')
+      }
+    }
+stage('2nd Stage'){
+      steps{
+        println('Hello CHOCIE-Param!! ' + CHOCIE_Param)
+        println("Hello MULTI-LINE-STRING!! ${MULTI_LINE_STRING}")
+        println('Hello STRING-PARAMETER!! ' + STRING_PARAMETER)
+      }
+    }
+    stage('3rd Stage'){
+      steps {
+        script {
+          sh"echo My Env command $SERVICE_CREDS"
+        }
+      }
+    }
+  }
+}
