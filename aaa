@@ -7,7 +7,7 @@ node('main') {
         ),     
         booleanParam(
            defaultValue:true,
-              description:'This is true',
+              //description:'This is true',
                     name:'Boolean_param'
                        ),
          text(
