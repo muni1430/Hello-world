@@ -1,7 +1,7 @@
 node('main') {
-  properties([
-    parameters([
-       choice (
+  properties ([
+    parameters ([
+       choice(
         choices:['one','two','three','four'],
           name:'MULTIPLE_CHOICE'
         ),     
