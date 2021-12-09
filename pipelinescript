@@ -1,5 +1,5 @@
 pipeline {
-  agent {label 'main'}
+  agent none
   parameters {
     choice(choices: ['ONE', 'TWO', 'THREE', 'FOUR', 'FIVE'], name: 'CHOCIE_Param')
     booleanParam(defaultValue: true, description: '', name: 'BOOLEAN')
