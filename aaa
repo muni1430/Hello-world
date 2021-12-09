@@ -14,14 +14,13 @@ node('main'){
            defaultVlue:'default value for multiple string',
                name:'multi_string'
                ),
-                  )],
-                )]
+                 
       stage ('stage1'){
       println("multiple numbers" + MULTIPLE_CHOICE)
       println("boolean value is" + Boolean_param)
       println("multi string is " + multi_string)
       }
-       
-               )]
+      )]
+        )]
       }
    
