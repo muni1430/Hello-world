@@ -16,6 +16,8 @@ pipeline {
       stage('stage1'){
               steps{
                      echo "number of multiline :${params.MULTIPLE_CHOICE}"
+                     echo "number os :${params.multi_string}"
+                     echo "numver of :${params.Boolean_param}"
                        //  println("multiple numbers" + MULTIPLE_CHOICE)
                           // println("boolean value is" + Boolean_param)
                         //  println("multi string is " + multi_string)
