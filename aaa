@@ -9,8 +9,6 @@ pipeline {
               //description:'This is true',
                     name:'Boolean_param'
                        )
-         text(
-           defaultVlue:"dddsdsd",description:'This is true', name:'multi_string')
                }
                stages{
       stage('stage1'){
