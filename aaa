@@ -12,15 +12,22 @@ agent any
                     name:'Boolean_param'
                        ),
          text(
-           defaultVlue:'default value for multiple string',
+           defaultVlue:'default value for multiple',
                name:'multi_string'
                ),
             )]
               )]
       stage ('stage1'){
-      println("multiple numbers" + MULTIPLE_CHOICE)
-      println("boolean value is" + Boolean_param)
-      println("multi string is " + multi_string)
-      }
-         }
+                           println("multiple numbers" + MULTIPLE_CHOICE)
+                           println("boolean value is" + Boolean_param)
+                          println("multi string is " + multi_string)
+                      }
+                    }
+                  }
+                     
+                      
+                      
+                      
+                          
+    
    
