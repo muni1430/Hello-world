@@ -11,8 +11,7 @@ pipeline {
                        )
          text(
            defaultVlue:"dddsdsd",description:'This is true'
-               name:'multi_string'
-               )
+               name:'multi_string')
                }
                stages{
       stage('stage1'){
