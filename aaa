@@ -1,8 +1,7 @@
 pipeline {
-agent any 
-  properties ([
-    parameters ([
-       choice(
+   agent any 
+    parameters {
+    choice(
         choices:['one','two','three','four'],
           name:'MULTIPLE_CHOICE'
         ),     
@@ -15,8 +14,6 @@ agent any
            defaultVlue:'default value for multiple',
                name:'multi_string'
                ),
-            )]
-              )]
       stage ('stage1'){
                            println("multiple numbers" + MULTIPLE_CHOICE)
                            println("boolean value is" + Boolean_param)
