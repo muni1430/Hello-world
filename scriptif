@@ -5,9 +5,12 @@ pipeline{
              booleanParam(name:'Boolean', defaultValue:true, desription:'Boolean value')
              }
        script {
-       if(){
+       if(factor==true){
+      string:(defaultValue:'factor',description:'must be Enter a name',name:'Factor')
+             booleanParam(name:'Boolean', defaultValue:true, desription:'Boolean value')
         }
-        else(){
+        else(factor==false){
+        println('status o fpramter :'+ Factor)
         }
         }
         }
