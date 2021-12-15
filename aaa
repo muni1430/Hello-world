@@ -10,7 +10,7 @@ pipeline {
                     name:'Boolean_param'
                        )
          text(
-           defaultVlue:",description:'This is true'
+           defaultVlue:"dddsdsd",description:'This is true'
                name:'multi_string'
                )
                }
