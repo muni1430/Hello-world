@@ -8,11 +8,11 @@ pipeline {
            defaultValue:true,
               //description:'This is true',
                     name:'Boolean_param'
-                       ),
+                       )
          text(
            defaultVlue:'default value for multiple',
                name:'multi_string'
-               ),
+               )
                }
                stages{
       stage('stage1'){
