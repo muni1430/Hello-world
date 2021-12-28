@@ -1,4 +1,4 @@
-node('main'){
+node('master'){
     def jsonitem
     stage('AWS CLI Version'){
         sh "aws --version"
