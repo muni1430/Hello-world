@@ -1,7 +1,7 @@
 pipeline{
     agent {label 'main'}
     parameters{
-        string(name: 'muneendar54', defaultValue: 'sshkey1', description: 'keypair name ')
+        string(name: 'muneendar54', defaultValue: 'muneendar54', description: 'keypair name ')
         string(name: 'count', defaultValue: '1', description: 'No of instances ')
         }
     stages{
