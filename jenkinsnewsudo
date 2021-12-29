@@ -1,7 +1,7 @@
 pipeline{
     agent {label 'main'}
     parameters{
-        string(name: 'keyname', defaultValue: 'sshkey1', description: 'keypair name ')
+        string(name: 'muneendar54', defaultValue: 'sshkey1', description: 'keypair name ')
         string(name: 'count', defaultValue: '1', description: 'No of instances ')
         }
     stages{
@@ -12,7 +12,7 @@ pipeline{
           }
        stage('Launch Ec2'){
          steps{
-           sh "aws ec2 run-instances --image-id ami-00c2004c45b684ad --count " + count + " --instance-type t2.micro --key-name " + keyname + " --user-data userdata --security-group-id sg-0a5f46a4b4cb4783b --subnet-id subnet-0991fd811575b0586 --region us-east-1c"
+           sh "aws ec2 run-instances --image-id ami-00c2004c45b684ad --count " + count + " --instance-type t2.micro --key-name " + muneendar54 + " --user-data userdata --security-group-id sg-0a5f46a4b4cb4783b --subnet-id subnet-0991fd811575b0586 --region us-east-1c"
            }
         }
      }
