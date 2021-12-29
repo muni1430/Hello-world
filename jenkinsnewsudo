@@ -1,10 +1,5 @@
-pipeline{
-    agent {label 'main'}
-    parameters{
-        string(name: 'keyname', defaultValue: 'sshkey1', description: 'keypair name ')
-        string(name: 'count', defaultValue: '1', description: 'No of instances ')
-        }
-    stages{
+node('main'){
+ stages{
         stage('AWS cli version'){
             steps{
               sh "aws --version"
@@ -16,4 +11,5 @@ pipeline{
            }
         }
      }
-  }
+   }
+  
