@@ -1,15 +1,15 @@
 node('main'){
     def jsonitem
-   // stage('AWS CLI Version'){
-     //   sh "aws --version"
-    //}
+    stage('AWS CLI Version'){
+        sh "aws --version"
+    }
     stage('Launch EC2'){
-        def cmd = "aws ec2 run-instances --image-id ami-00c2004c45b684ad5 --count " + 1 + " --instance-type t2.micro --user-data \$'" + userdata + "' --key-name '" + muneendar54 + "' --security-group-id sg-0a5f46a4b4cb4783b --subnet-id subnet-0991fd811575b0586 --region us-east-1"
+        def cmd = "aws ec2 run-instances --image-id ami-00c2004c45b684ad5 --count " + 1 + " --instance-type t2.micro --user-data \$'" + userdata + "' --key-name '" + muneendar54 + "' --security-group-id sg-0a5f46a4b4cb4783b --subnet-id subnet-0991fd811575b0586 --region us-east-1c"
         def output = sh(script: cmd,returnStdout: true)
         jsonitem = readJSON text: output
         println(jsonitem)
     }
     stage('Describe EC2'){
-        sh  "aws ec2 describe-instances --instance-ids ${jsonitem['Instances'][0]['InstanceId']} --region us-east-1"
+        sh  "aws ec2 describe-instances --instance-ids ${jsonitem['Instances'][0]['InstanceId']} --region us-east-1c"
     }
 }
