@@ -12,7 +12,7 @@ pipeline{
           }
        stage('Launch Ec2'){
          steps{
-           sh "aws ec2 run-instances --image-id ami-00c2004c45b684ad --count " + count + " --instance-type t2.micro --key-name " + muneendar54 + " --user-data userdata --security-group-id sg-0a5f46a4b4cb4783b --subnet-id subnet-0991fd811575b0586 --region us-east-1c"
+           sh "aws ec2 run-instances --image-id ami-00c2004c45b684ad --count " + count + " --instance-type t2.micro --key-name " + muneendar54 + " --user-data userdata --security-group-id sg-0a5f46a4b4cb4783b --subnet-id subnet-0991fd811575b0586 --region us-east-2"
            }
         }
      }
