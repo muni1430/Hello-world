@@ -1,0 +1,18 @@
+pipeline{
+  agent {label 'main'}
+  parameters{
+    string (name: 'keyname', defaultValue: 'Ec2all', description: ' ')
+            }
+  stages{
+    stage('Create Launch config'){
+      steps{
+         sh "aws autoscaling create-launch-configuration --launch-configuration-name newlc2 --image-id  --instance-type t2.micro --security-groups sg-03723ff32a5606bda --key-name " + keyname + " --user-data file://userdata.txt --region us-east-2"
+          } 
+       }
+    stage('ASG'){
+      steps{
+         sh "aws autoscaling create-auto-scaling-group --auto-scaling-group-name myasg --launch-configuration-name mylc --max-size 2 --min-size 1 --availability-zones us-east-2c --region us-east-2"
+          } 
+        }
+  }
+}	 
