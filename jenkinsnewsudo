@@ -10,9 +10,6 @@ node('main'){
         println(jsonitem)
     }
     stage('Describe EC2'){
-        sh  "aws ec2 describe-instances --instance-ids ${jsonitem['Instances'][0]['InstanceId']} --region us-east-1c"
+        sh  "aws ec2 describe-instances --instance-ids ${jsonitem['Instances'][0]['InstanceId']} --region us-east-1"
     }
-    //stage('Terminate EC2'){
-      //  sh "aws ec2 terminate-instances --instance-ids ${jsonitem['Instances'][0]['InstanceId']} --region us-east-1c"
-    //}
 }
