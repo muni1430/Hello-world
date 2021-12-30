@@ -4,11 +4,11 @@ node('main'){
         sh "aws --version"
     }
     stage('create an ami'){
-        def cmd = 'aws ec2 create-image --instance-id i-086045db590bf98f8 --name "jenser" --description "amiserver" --region us-east-1c'     
+        def cmd = 'aws ec2 create-image --instance-id i-086045db590bf98f8 --name "jenser" --description "amiserver" --region us-east-1c' 
+        sts_client = boto3.client('sts', region_name='us-east-1c', endpoint_url="https://ec2.us-east-1c.amazonaws.com")
 	def output = sh(script: cmd)
         jsonitem = readJSON text: output
         println(jsonitem)
-	sts_client = boto3.client('sts', region_name='us-east-1c', endpoint_url='https://sts.us-east-1c.amazonaws.com')
     }
 }
 
