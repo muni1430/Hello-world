@@ -1,0 +1,12 @@
+node('main'){
+    def jsonitem
+    stage('AWS CLI Version'){
+        sh "aws --version"
+    }
+    stage('create an ami'){
+        def cmd = 'aws ec2 create-image --instance-id i-086045db590bf98f8 --name "jenseam" --description "amiservers" --region us-east-1' 
+	def output = sh(script: cmd)
+        jsonitem = readJSON text: output
+        println(jsonitem)
+    }
+}
