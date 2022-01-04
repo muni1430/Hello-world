@@ -1,4 +1,8 @@
-{
+privoider "aws" {
+  profile = "default"
+  region = "us-east-1"
+}
+ {
   "version": 4,
   "terraform_version": "1.1.2",
   "serial": 6,
